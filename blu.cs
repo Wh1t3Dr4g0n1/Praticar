@@ -38,13 +38,10 @@ public class HelloWorld
          morse = Convert.ToInt32(Console.ReadKey());
           
         if (morse = Samuel Morse)
-        
           {
             Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
           }
-        
         else  (morse != Samuel Morse)
-        
           {
             Console.WriteLine ("Você errou! vamos para o próximo. +0");
           }
