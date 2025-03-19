@@ -19,32 +19,32 @@ public class HelloWorld
         {
             Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
         }
-        else (num != 16)
+        else
         {
-            Console.WriteLine ("Você errou! vamos para o próximo. +0")
+            Console.WriteLine ("Você errou! vamos para o próximo. +0");
         }
             Console.Write ("Quem descobriu o Brasil: ");
-          brasil = Convert.ToInt32(Console.ReadKey());
+          string brasil = Convert.ToInt32(Console.ReadKey());
           
-        if (brasil = Pedro Álvares Cabral)
+        if (brasil == Pedro Álvares Cabral)
         {
             Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
         }
-        else  (brasil != Pedro Álvares Cabral)
+        else
         {
-            Console.WriteLine ("Você errou! vamos para o próximo. +0")
+            Console.WriteLine ("Você errou! vamos para o próximo. +0");
         }
             Console.Write ("Quem criou o morse: ");
-         morse = Convert.ToInt32(Console.ReadKey());
+         string morse = Convert.ToInt32(Console.ReadKey());
           
-        if (morse = Samuel Morse)
+        if (morse.Trim().ToLower() == Samuel Morse)
           {
             Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
           }
-        else  (morse != Samuel Morse)
+        else
           {
             Console.WriteLine ("Você errou! vamos para o próximo. +0");
           }
-            Console.Write ("Some os pontos se veja se chegou a 3. Se sim, você passou no teste!")
+            Console.Write ("Some os pontos se veja se chegou a 3. Se sim, você passou no teste!");
     }
 }
