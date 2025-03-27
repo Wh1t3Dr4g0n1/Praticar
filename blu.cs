@@ -7,44 +7,44 @@ public class HelloWorld
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine ("Vamos criar um questionário para saber se você consegue entrar para nossa escola.");
+        Console.WriteLine("Vamos criar um questionário para saber se você consegue entrar para nossa escola.");
         int num;
         string brasil;
         string morse;
-        
-        Console.Write ("me responda, qual o resultado de 4 x 4: ");
-        num = Convert.ToInt32(Console.ReadKey());
-        
+
+        Console.Write("me responda, qual o resultado de 4 x 4: ");
+        num = Convert.ToInt32(Console.ReadLine());
+
         if (num == 16)
         {
-            Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
+            Console.WriteLine("Você acertou! Vamos para o próximo.+1");
         }
         else
         {
-            Console.WriteLine ("Você errou! vamos para o próximo. +0");
+            Console.WriteLine("Você errou! vamos para o próximo. +0");
         }
-            Console.Write ("Quem descobriu o Brasil: ");
-          string brasil = Convert.ToInt32(Console.ReadKey());
-          
-        if (brasil == Pedro Álvares Cabral)
+        Console.Write("Quem descobriu o Brasil: ");
+        brasil = Console.ReadLine();
+
+        if (brasil == "Pedro Álvares Cabral")
         {
-            Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
+            Console.WriteLine("Você acertou! Vamos para o próximo.+1");
         }
         else
         {
-            Console.WriteLine ("Você errou! vamos para o próximo. +0");
+        Console.WriteLine("Você errou! vamos para o próximo. +0");
         }
-            Console.Write ("Quem criou o morse: ");
-         string morse = Convert.ToInt32(Console.ReadKey());
-          
-        if (morse.Trim().ToLower() == Samuel Morse)
-          {
-            Console.WriteLine ("Você acertou! Vamos para o próximo.+1");
-          }
+        Console.Write("Quem criou o morse: ");
+        morse = Console.ReadLine();
+
+        if (morse == "Samuel Morse")
+        {
+            Console.WriteLine("Você acertou! Vamos para o próximo.+1");
+        }
         else
-          {
-            Console.WriteLine ("Você errou! vamos para o próximo. +0");
-          }
-            Console.Write ("Some os pontos se veja se chegou a 3. Se sim, você passou no teste!");
+        {
+            Console.WriteLine("Você errou! vamos para o próximo. +0");
+        }   
+            Console.Write("Some os pontos se veja se chegou a 3. Se sim, você passou no teste!");
     }
 }
