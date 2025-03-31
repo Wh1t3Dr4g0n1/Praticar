@@ -1,11 +1,3 @@
-// Fazer um sistema de registro e login
-// pedir e-mail, usuário, e senha.
-// verificar se no login bate com o registrado.
-
-
-
-
-    
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +20,7 @@ namespace teste
 
 
 
-			string escolha, confirmar, confirmare, tentar;
+			string escolha, confirmar, confirmare, tentar, escolhae;
 			string user, email, senha;
 			string usere, emaile, senhae;
 			usere = "";
@@ -40,9 +32,9 @@ namespace teste
 			email = "";
 			user = "";
 			senha = "";
+			escolhae = "";
 
-			do
-			{
+
 				Console.WriteLine("Bem-vindo, deseja se logar ou se registrar?");
 				Console.Write("(logar/registrar): ");
 				escolha = Console.ReadLine();
@@ -61,15 +53,17 @@ namespace teste
 					Console.WriteLine("===========");
 					Console.Write("deseja se Registrar?: ");
 					confirmar = Console.ReadLine();
-
+				}
 					if (confirmar == "sim" || confirmar == "Sim" || confirmar == "S" || confirmar == "s")
 					{
 						Console.Clear();
 						Console.WriteLine("Registro realizado com sucesso!");
-
+				        Console.Write("deseja fazer login(S/N): ");
+				        escolhae = Console.ReadLine();
+				
 					}
-				}
-				else if (escolha == "logar" || escolha == "Logar" || escolha == "logar-se" || escolha == "Logar-se" || escolha == "login" || escolha == "Login")
+				
+				if (escolhae == "logar" || escolhae == "Logar" || escolhae == "logar-se" || escolhae == "Logar-se" || escolhae == "login" || escolhae == "Login" || escolha == "logar" || escolha == "Logar" || escolha == "logar-se" || escolha == "Logar-se" || escolha == "login" || escolha == "Login")
 				{
 					Console.Clear();
 					Console.WriteLine("===========");
@@ -109,10 +103,7 @@ namespace teste
 							}
 						}
 					}
-				}
-			} while (true);
-
-
+				} while (true);
 		}
 	}
 }
