@@ -1,14 +1,20 @@
 // Imposto de Renda
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+// Linha de raciocínio
+// 
+// 1. Início 
+// 2. var impostoDeRenda, entrada, aliquotaEfetiva = double
+// 3. Mostrar "mensagem pedindo o rendimento mensal"
+// 4. Se o imposto for == 0 a 2259,20 --> isento
+// 5. Mostrar "está isento"
+// 6. Se o imposto for de 2259,20 a 2826,65 --> impostoDeRenda * 0.075 - 169.44
+// 7. Mostrar "imposto de renda (resultado)"
+// 8. Se o imposto for de 2826,65 a 3751,05 --> impostoDeRenda * 0.15 = 381.44
+// 9. Mostrar "imposto de renda (resultado)"
+// 10. Se o imposto for de 3751,05 a 4664,68 --> impostoDeRenda * 0.225 - 662.77
+// 11. Mostrar "imposto de renda (resultado)"
+// 12. Se o imposto for de 4664,68 a acima --> impostoDeRenda * 0.275 - 896.00
+// 13. Mostrar "imposto de renda (resultado)"
 
 
 
@@ -50,7 +56,7 @@ namespace ConsoleApp2
             {
                 Console.Clear();
                 Console.WriteLine("============================");
-                impostoDeRenda = (entrada - 2259.20) * 0.075 - 169.44;
+                impostoDeRenda = entrada * 0.075 - 169.44;
                 Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
             }
 
@@ -58,7 +64,7 @@ namespace ConsoleApp2
             {
                 Console.Clear();
                 Console.WriteLine("============================");
-                impostoDeRenda = (entrada - 2826.65) * 0.15 - 381.44;
+                impostoDeRenda = entrada * 0.15 - 381.44;
                 Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
             }
 
@@ -66,7 +72,7 @@ namespace ConsoleApp2
             {
                 Console.Clear();
                 Console.WriteLine("============================");
-                impostoDeRenda = (entrada - 3751.05) * 0.225 - 662.77;
+                impostoDeRenda = entrada * 0.225 - 662.77;
                 Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
             }
 
@@ -75,7 +81,7 @@ namespace ConsoleApp2
             {
                 Console.Clear();
                 Console.WriteLine("============================");
-                impostoDeRenda = (entrada - 4664.68) * 0.275 - 896.00;
+                impostoDeRenda = entrada * 0.275 - 896.00;
                 Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
             }
 
