@@ -15,7 +15,9 @@
 // 11. Mostrar "imposto de renda (resultado)"
 // 12. Se o imposto for de 4664,68 a acima --> impostoDeRenda * 0.275 - 896.00
 // 13. Mostrar "imposto de renda (resultado)"
-
+// 14. Se entrada for maior que 0, calcular alíquota --> impostoDeRenda / entrada * 100
+// 15. Mostrar "Alíquota Efetiva"
+// 16. Fim
 
 
 using System;
