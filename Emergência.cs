@@ -1,57 +1,77 @@
-// Online C# Editor for free
-// Write, Edit and Run your C# code using C# Online Compiler
-
 using System;
 
-public class HelloWorld
+namespace Teste
 {
-    public static void Main(string[] args)
+    internal class Program
     {
-        // Fazer um sistema de ajuda
-// emergencia
-string policia, desejop, enderecop;
-string ambulancia, desejoa, enderecoa;
-string mecanico, desejom, enderecom;
-string escolha;
+        static void Main(string[] args)
+        {
+            // Fazer um sistema de ajuda
+            // emergencia
+            string desejop, enderecop;
+            string desejoa, enderecoa;
+            string desejom, enderecom;
+            string escolha;
 
+            Console.WriteLine("======================================================");
+            Console.WriteLine("Bem-vindo ao sistema de emergência, como posso ajudar?");
+            Console.WriteLine("Polícia/Ambulância/Mecânico");
+            Console.Write("digite: ");
+            escolha = Console.ReadLine();
+            Console.WriteLine("======================================================");
+            {
 
-Consele.WriteLine ("Bem-vindo ao sistema de emergência, como posso ajudar?");
-Console.WriteLine ("Polícia/Ambulância/Mecânico");
-Console.Write ("digite: ");
-escolha = Console.ReadLine();
+                if (escolha == "policia" || escolha == "Policia" || escolha == "Polícia" || escolha == "polícia")
+                {
+                    Console.Clear();
+                    Console.WriteLine("===================");
+                    Console.WriteLine("Do que você precisa");
+                    Console.Write("digite: ");
+                    desejop = Console.ReadLine();
+                    Console.WriteLine("=====================");
+                    Console.Write("Digite seu endereço: ");
+                    enderecop = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("=====================================================================================");
+                    Console.WriteLine("Já enviamos uma viatura para " + enderecop + ". Qualquer dúvida, ligue para 190.");
+                    Console.WriteLine("=====================================================================================");
+                }
 
+                if (escolha == "ambulancia" || escolha == "Ambulancia" || escolha == "ambulância" || escolha == "Ambulância")
+                {
+                    Console.Clear();
+                    Console.WriteLine("====================");
+                    Console.WriteLine("Do que você precisa.");
+                    Console.Write("digite: ");
+                    desejoa = Console.ReadLine();
+                    Console.WriteLine("=====================");
+                    Console.Write("Digite seu endereço: ");
+                    enderecoa = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("=====================================================================================");
+                    Console.WriteLine("Já enviamos uma viatura para" + enderecoa + "Qualquer dúvida, ligue para 191.");
+                    Console.WriteLine("=====================================================================================");
+                }
 
-if (escolha == "policia")
-
- Console.Clear();
- Console.WriteLine ("Do que você precisa");
- Console.Write ("digite: ");
- desejop = Console.ReadLine();
- Console.Write ("Digite seu endereço: ");
- enderecop = Console.ReadLine();
- Console.Clear();
- Console.WriteLine ("Já enviamos uma viatura para o seu endereço. Qualquer dúvida, ligue para 190.");
- 
-
-
-if (escolha == ambulancia)
-
-Console.WriteLine ("Do que você precisa");
- Console.Write ("digite: ");
- desejoa = Console.ReadLine();
- Console.Write ("Digite seu endereço: ");
- enderecoa = Console.ReadLine();
- Console.Clear();
- Console.WriteLine ("Já enviamos uma viatura para o seu endereço. Qualquer dúvida, ligue para 191.");
-
-if (escolha == Mecânico)
-
-Console.WriteLine ("Do que você precisa");
- Console.Write ("digite: ");
- desejoa = Console.ReadLine();
- Console.Write ("Digite seu endereço: ");
- enderecoa = Console.ReadLine();
- Console.Clear();
- Console.WriteLine ("Já enviamos uma viatura para o seu endereço");
+                if (escolha == "Mecânico" || escolha == "Mecanico" || escolha == "mecânico" || escolha == "mecanico")
+                {
+                    Console.Clear();
+                    Console.WriteLine("===================");
+                    Console.WriteLine("Do que você precisa");
+                    Console.Write("digite: ");
+                    desejom = Console.ReadLine();
+                    Console.WriteLine("=====================");
+                    Console.Write("Digite seu endereço: ");
+                    enderecom = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("============================================");
+                    Console.WriteLine("Já enviamos uma viatura para" + enderecom);
+                    Console.WriteLine("============================================");
+                }
+            }
+            Console.ReadKey();
+        }
+        
     }
-    Console.ReadKey()
+    
+}
