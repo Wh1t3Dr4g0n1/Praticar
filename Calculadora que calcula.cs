@@ -453,6 +453,7 @@ namespace wadawodnbqwifbnqw
                     }
                 }
                 if (blue == "pesos")
+                {
                     {
                         Console.Clear();
                         Console.WriteLine("===================================");
@@ -796,6 +797,7 @@ namespace wadawodnbqwifbnqw
                             Console.WriteLine("Resultado: " + total + med2);
                         }
                     }
+                }
                 Console.Write("Quer fazer outro cálculo (S/N)?: ");
                 conti = Console.ReadLine();
             }
