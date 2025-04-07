@@ -1,809 +1,116 @@
+// Imposto de Renda
+
+// Linha de raciocínio
+// 
+// 1. Início 
+// 2. var impostoDeRenda, entrada, aliquotaEfetiva = double
+// 3. Mostrar "mensagem pedindo o rendimento mensal"
+// 4. Se o imposto for == 0 a 2259,20 --> isento
+// 5. Mostrar "está isento"
+// 6. Se o imposto for de 2259,20 a 2826,65 --> impostoDeRenda * 0.075 - 169.44
+// 7. Mostrar "imposto de renda (resultado)"
+// 8. Se o imposto for de 2826,65 a 3751,05 --> impostoDeRenda * 0.15 = 381.44
+// 9. Mostrar "imposto de renda (resultado)"
+// 10. Se o imposto for de 3751,05 a 4664,68 --> impostoDeRenda * 0.225 - 662.77
+// 11. Mostrar "imposto de renda (resultado)"
+// 12. Se o imposto for de 4664,68 a acima --> impostoDeRenda * 0.275 - 896.00
+// 13. Mostrar "imposto de renda (resultado)"
+// 14. Se entrada for maior que 0, calcular alíquota --> impostoDeRenda / entrada * 100
+// 15. Mostrar "Alíquota Efetiva"
+// 16. Fim
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wadawodnbqwifbnqw
+namespace ConsoleApp2
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            
-            
-            // Calculadora que calcula.
-            // Medidas, números, pesos. 
+            //variáveis para entrada(rendimentos), imposto de renda e alíquota efetiva.
+            //inicar a variavel impostoDeRenda com 0 para evitar o erro CS0165.
+            //Foi utilizado https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/compiler-messages/cs0165 para resolver o erro.
 
-            // medidas
-            string blu, blue, med1, med2;
-            string conti;
-            double total, num;
-            // numeros
-            double numi, nume, adi, sub, multi, divi;
-            // pesos
+            string refazer;
+            double impostoDeRenda = 0, entrada, aliquotaEfetiva;
 
             do
             {
                 Console.Clear();
-                Console.WriteLine("===================================");
-                Console.WriteLine("Essa é uma calculadora que calcula.");
-                Console.Write("medidas / numeros / pesos: ");
-                blue = Console.ReadLine();
+                Console.WriteLine("======================================================================");
+                Console.WriteLine("Diga seus rendimentos mensais para que eu calcule seu imposto de renda");
+                Console.Write("Rendimentos Mensais: ");
+                entrada = Convert.ToDouble(Console.ReadLine());
 
-                // MEDIDAS
+                //Dados retirados de https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/copy_of_2024.
 
-                if (blue == "medidas")
+                if (entrada <= 2259.20)
                 {
                     Console.Clear();
-                    Console.WriteLine("===================================");
-                    Console.WriteLine("Escolha a medida atual.");
-                    Console.Write("mm / cm / dm / m / dam / hm / km: ");
-                    med1 = Console.ReadLine();
-                    Console.WriteLine("===================================");
-                    Console.WriteLine("Escolha para qual deseja converter:");
-                    Console.Write("mm / cm / dm / m / dam / hm / km: ");
-                    med2 = Console.ReadLine();
-                    Console.Write("me dê o número: ");
-                    num = int.Parse(Console.ReadLine());
-
-                    // Milimetro
-
-                    if (med1 == "mm" && med2 == "cm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "mm" && med2 == "dm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "mm" && med2 == "m")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "mm" && med2 == "dam")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "mm" && med2 == "hm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "mm" && med2 == "km")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 1000000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Centimetro
-
-                    if (med1 == "cm" && med2 == "dm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "cm" && med2 == "m")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "cm" && med2 == "dam")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "cm" && med2 == "hm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "cm" && med2 == "km")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Decametro
-
-                    if (med1 == "dm" && med2 == "m")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dm" && med2 == "dam")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dm" && med2 == "hm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dm" && med2 == "km")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Metro
-
-                    if (med1 == "m" && med2 == "dam")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "m" && med2 == "hm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "m" && med2 == "km")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Decametro
-
-                    if (med1 == "dam" && med2 == "hm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dam" && med2 == "km")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Hectômetro
-
-                    if (med1 == "hm" && med2 == "km")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num * 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Quilometro (ao contrário)
-
-                    if (med1 == "km" && med2 == "hm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "km" && med2 == "dam")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "km" && med2 == "m")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "km" && med2 == "dm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "km" && med2 == "cm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "km" && med2 == "mm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 1000000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Hectômetro (ao contrário)
-
-                    if (med1 == "hm" && med2 == "dam")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "hm" && med2 == "m")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "hm" && med2 == "dm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "hm" && med2 == "cm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "hm" && med2 == "mm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Decametro (ao contrário)
-
-                    if (med1 == "dam" && med2 == "m")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dam" && med2 == "dm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dam" && med2 == "cm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dam" && med2 == "mm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Metro (ao contrário)
-
-                    if (med1 == "m" && med2 == "dm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "m" && med2 == "cm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "m" && med2 == "mm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 1000;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Decimetro (ao contrário)
-
-                    if (med1 == "dm" && med2 == "cm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-                    if (med1 == "dm" && med2 == "mm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 100;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // Centimetro (ao contrário)
-
-                    if (med1 == "cm" && med2 == "mm")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================");
-                        total = num / 10;
-                        Console.WriteLine("Resultado: " + total + med2);
-                    }
-
-                    // NUMEROS
-
+                    impostoDeRenda = 0;
+                    Console.WriteLine("==========================");
+                    Console.WriteLine("    Você está insento.    ");
+                    Console.WriteLine("==========================");
+                    Console.WriteLine("(aperta enter até sair...)");
                 }
 
-                if (blue == "numeros" || blue == "numero")
+                else if (entrada <= 2826.65)
                 {
                     Console.Clear();
-                    Console.WriteLine("===========================================================");
-                    Console.WriteLine("Irei lhe proporcionar um tipo de calculadora para você.");
-                    Console.WriteLine("dito isso, me diga, o que deseja");
-                    Console.WriteLine("===========================================================");
-                    Console.Write("adição, subtração, multiplicação ou divisão: ");
-                    blu = Console.ReadLine();
-
-                    if (blu == "adição" || blu == "soma" || blu == "adiçao" || blu == "Adição" || blu == "Soma" || blu == "Adiçao")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("Digite dois numeros a serem somados");
-                        Console.Write("Primeiro número: ");
-                        numi = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Segundo número: ");
-                        nume = Convert.ToInt32(Console.ReadLine());
-                        adi = numi + nume;
-                        Console.WriteLine("seu resultado é: " + adi);
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("(clique em qualquer tecla para continuar..)");
-                        Console.ReadKey();
-                    }
-                    if (blu == "subtração" || blu == "menos" || blu == "subtraçao" || blu == "Subtração" || blu == "Menos" || blu == "Subtraçao")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("Digite dois numeros a serem subtraídos");
-                        Console.Write("Primeiro número: ");
-                        numi = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Segundo número: ");
-                        nume = Convert.ToInt32(Console.ReadLine());
-                        sub = numi - nume;
-                        Console.WriteLine("seu resultado é: " + sub);
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("(clique em qualquer tecla para continuar..)");
-                        Console.ReadKey();
-                    }
-                    if (blu == "divisão" || blu == "dividir" || blu == "divisao" || blu == "Divisão" || blu == "Dividir" || blu == "Divisao")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("Digite dois numeros a serem divididos");
-                        Console.Write("Primeiro número: ");
-                        numi = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Segundo número: ");
-                        nume = Convert.ToInt32(Console.ReadLine());
-                        divi = numi / nume;
-                        Console.WriteLine("seu resultado é: " + divi);
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("(clique em qualquer tecla para continuar..)");
-                        Console.ReadKey();
-                    }
-                    if (blu == "multiplicação" || blu == "multiplicar" || blu == "multiplicaçao" || blu == "Multiplicação" || blu == "Multiplicar" || blu == "Multiplicaçao")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===========================================================");
-                        Console.WriteLine("Digite dois numeros a serem multiplicados");
-                        Console.Write("Primeiro número: ");
-                        numi = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Segundo número: ");
-                        nume = Convert.ToInt32(Console.ReadLine());
-                        multi = numi * nume;
-                        Console.WriteLine("seu resultado é: " + multi);
-                        Console.WriteLine("===========================================================");
-                        Console.ReadKey();
-                        Console.WriteLine("(clique em qualquer tecla para continuar..)");
-                    }
+                    Console.WriteLine("============================");
+                    impostoDeRenda = entrada * 0.075 - 169.44;
+                    Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
                 }
-                if (blue == "pesos")
+
+                else if (entrada <= 3751.05)
                 {
-                    {
-                        Console.Clear();
-                        Console.WriteLine("===================================");
-                        Console.WriteLine("Escolha a medida atual.");
-                        Console.Write("mg / cg / dg / g / dag / hg / kg: ");
-                        med1 = Console.ReadLine();
-                        Console.WriteLine("===================================");
-                        Console.WriteLine("Escolha para qual deseja converter:");
-                        Console.Write("mg / cg / dg / g / dag / hg / kg: ");
-                        med2 = Console.ReadLine();
-                        Console.Write("me dê o número: ");
-                        num = int.Parse(Console.ReadLine());
-
-                        // Milimetro
-
-                        if (med1 == "mg" && med2 == "cg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "mg" && med2 == "dg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "mg" && med2 == "g")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "mg" && med2 == "dag")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "mg" && med2 == "hg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "mg" && med2 == "kg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 1000000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Centimetro
-
-                        if (med1 == "cg" && med2 == "dg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "cg" && med2 == "g")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "cg" && med2 == "dag")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "cg" && med2 == "hg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "cg" && med2 == "km")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Decametro
-
-                        if (med1 == "dg" && med2 == "g")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dg" && med2 == "dag")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dg" && med2 == "hg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dg" && med2 == "kg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Metro
-
-                        if (med1 == "g" && med2 == "dag")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "g" && med2 == "hg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "g" && med2 == "kg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Decametro
-
-                        if (med1 == "dag" && med2 == "hg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dag" && med2 == "kg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Hectômetro
-
-                        if (med1 == "hg" && med2 == "kg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num * 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Quilometro (ao contrário)
-
-                        if (med1 == "kg" && med2 == "hg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "kg" && med2 == "dag")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "kg" && med2 == "g")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "kg" && med2 == "dg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "kg " && med2 == "cg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "kg" && med2 == "mg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 1000000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Hectômetro (ao contrário)
-
-                        if (med1 == "hg" && med2 == "dag")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "hg" && med2 == "g")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "hg" && med2 == "dg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "hg" && med2 == "cg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "hg" && med2 == "mg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Decametro (ao contrário)
-
-                        if (med1 == "dag" && med2 == "g")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dag" && med2 == "dg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dag" && med2 == "cg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dag" && med2 == "mg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Metro (ao contrário)
-
-                        if (med1 == "g" && med2 == "dg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "g" && med2 == "cg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "g" && med2 == "mg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 1000;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Decimetro (ao contrário)
-
-                        if (med1 == "dg" && med2 == "cg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                        if (med1 == "dg" && med2 == "mg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 100;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-
-                        // Centimetro (ao contrário)
-
-                        if (med1 == "cg" && med2 == "mg")
-                        {
-                            Console.Clear();
-                            Console.WriteLine("===================");
-                            total = num / 10;
-                            Console.WriteLine("Resultado: " + total + med2);
-                        }
-                    }
+                    Console.Clear();
+                    Console.WriteLine("============================");
+                    impostoDeRenda = entrada * 0.15 - 381.44;
+                    Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
                 }
-                Console.Write("Quer fazer outro cálculo (S/N)?: ");
-                conti = Console.ReadLine();
+
+                else if (entrada <= 4664.68)
+                {
+                    Console.Clear();
+                    Console.WriteLine("============================");
+                    impostoDeRenda = entrada * 0.225 - 662.77;
+                    Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
+                }
+
+                else
+
+                {
+                    Console.Clear();
+                    Console.WriteLine("============================");
+                    impostoDeRenda = entrada * 0.275 - 896.00;
+                    Console.WriteLine($"Imposto devido: {impostoDeRenda:F2}");
+                }
+
+                if (entrada > 0)
+                {
+                    Console.WriteLine("============================");
+                    aliquotaEfetiva = impostoDeRenda / entrada * 100;
+                    Console.WriteLine($"Alíquota Efetiva: {aliquotaEfetiva:F2}%");
+                    Console.WriteLine("============================");
+                    Console.WriteLine("(aperta enter até sair...)");
+                    Console.ReadKey();
+                }
+
+                //Foi Utilizado Interpolação de string para facilitar a leitura do código e garantindo a formatação adequada dos números e porcentagens. 
+                //https://learn.microsoft.com/pt-br/dotnet/csharp/tutorials/string-interpolation
+                Console.Clear();
+                Console.WriteLine("=================================");
+                Console.WriteLine("deseja refazer o cálculo (S/N)?: ");
+                refazer = Console.ReadLine();
             }
-            while (conti == "s" || conti == "S" || conti == "sim" || conti == "Sim");
+            while (refazer == "s" || refazer == "S" || refazer == "sim" || refazer == "Sim");
             Console.ReadKey();
         }
-        
     }
 }
