@@ -1,0 +1,18 @@
+Aula - Vetor
+
+bubble sort - É o método que utiliza suor para ordenar elementos de um vetor.
+
+vetor antes da ordenação
+
+num [13][22][15][7][2][40]
+     0   1   2   3  4  5
+	
+vetor crescente depois da ordenação	
+
+num [2][7][13][15][22][40]
+
+if (num [i] > num [i + i])
+
+aux = num[i];
+num[i] = num[i + 1];
+num [i] = aux;
